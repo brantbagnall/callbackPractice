@@ -98,7 +98,9 @@ contains(names, 'Colt', function(result){
 
   //Code Here
 function uniq (arr, cb) {
-  return cb(arr.filter((a, b) => a != b));
+  return cb(
+    arr.forEach()
+  );
 }
 
 
