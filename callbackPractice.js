@@ -98,9 +98,18 @@ contains(names, 'Colt', function(result){
 
   //Code Here
 function uniq (arr, cb) {
-  return cb(
-    arr.forEach()
-  );
+  function abc () {
+    for (var i = 0; i < arr.length; i++) {
+      var nextName = arr[i];
+      for (var a = 0 + i + 1; a < arr.length; a++) {
+        if (nextName == arr[a]) {
+          arr.splice(a,1);
+        }
+      }
+    }
+    return arr;
+  }
+  return cb(abc());
 }
 
 
@@ -112,7 +121,12 @@ uniq(names, function(uniqArr){
 // 6. Write a function called each that takes in an array of names. For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
 
     //Code Here
-
+function each (arr, cb) {
+  arr.forEach(function (elem, ind) {
+    cb(elem, ind);
+  }
+);
+}
 
 
 each(names, function(item, indice){
@@ -125,7 +139,13 @@ each(names, function(item, indice){
 // When the correct user object is found, invoke the callback with the user object as an argument.
 
 // Code here
-
+function getUserById (arr, ids, cb) {
+  arr.forEach(function (curr) {
+    if (curr.id == ids) {
+      cb(curr);
+    }
+  });
+}
 
 
 var users = [
